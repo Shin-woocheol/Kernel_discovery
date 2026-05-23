@@ -1,0 +1,23 @@
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+
+# Outputs
+output*/
+*.pt
+*.npz
+
+# Environment / API key
+.env
+
+# Data (download per README). Patterns cover both directories and symlinks.
+hdbo/data
+hdbo/data/
+hdbo/benchsuite/utils/mujuco_policies
+hdbo/benchsuite/utils/mujuco_policies/
+
+# Editor / OS
+.DS_Store
+.idea/
+.vscode/

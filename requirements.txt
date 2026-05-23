@@ -1,0 +1,39 @@
+# Pinned versions used to reproduce the paper's Table 1 results.
+# Order matters for clean installs (numeric stack before torch, torch before gpytorch/botorch).
+
+# Core numeric stack
+numpy==1.26.4
+scipy==1.12.0
+scikit-learn==1.7.2
+
+# Torch + CUDA 12.1 wheels.
+# When installing, add --extra-index-url https://download.pytorch.org/whl/cu121
+torch==2.5.1+cu121
+torchvision==0.20.1+cu121
+torchaudio==2.5.1+cu121
+
+# GP / BO stack
+gpytorch==1.15.2
+botorch==0.16.1
+
+# LLM
+openai
+python-dotenv
+
+# Runtime utilities
+matplotlib
+joblib
+hyperopt==0.2.7
+
+# Benchmark dependency (Rover/Humanoid envs)
+gym==0.26.2
+
+# Optional: experiment tracking via --wandb
+# wandb
+
+# --- Humanoid-only (install separately because of build-isolation quirks) ---
+# pip install "Cython<3" "setuptools<81"
+# pip install --no-build-isolation "mujoco-py==2.1.2.14"
+#
+# Also requires system libs: build-essential gcc patchelf libosmesa6-dev libgl1-mesa-dev libglew-dev libglfw3
+# And the MuJoCo 2.1.0 binary at ~/.mujoco/mujoco210/ (see README "MuJoCo setup").
